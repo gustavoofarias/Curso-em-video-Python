@@ -14,4 +14,7 @@ produtos_precos = (
 
 for pos in range(0, len(produtos_precos)):
     if pos % 2 == 0:
-        print(produtos_precos[pos])
+        print(f"{produtos_precos[pos]:.<30}", end="")
+
+    else:
+        print(f"{produtos_precos[pos]:>7.2f}")
