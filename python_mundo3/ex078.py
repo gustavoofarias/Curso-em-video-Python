@@ -17,6 +17,6 @@ max = max(lista)
 pos_menor = lista.index(min)
 pos_maior = lista.index(max)
 
-print(f"O menor valor foi {min} e sua posição é {pos_menor + 1}")
-print(f"O maior valor foi {max} e sua posição é {pos_maior + 1}")
+print(f"O menor valor foi {min} e sua posição é {pos_menor }")
+print(f"O maior valor foi {max} e sua posição é {pos_maior }")
 
