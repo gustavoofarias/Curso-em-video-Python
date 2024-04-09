@@ -10,7 +10,7 @@ lista = []
 
 while True:
     print("Digite um número negativo caso queira cancelar.")
-    num = int(input("Digite um número:"))
+    num = int(input("Digite um número: "))
     if num < 0:
         break
     else:
@@ -19,14 +19,12 @@ while True:
 tamanho_lista = len(lista)
 print(f"Foi digitado {tamanho_lista} números.")
 
-if lista.count(5) == 5:
+if 5 in lista:
     print("O número 5 está presente na lista.")
 else:
-    print("Não está na lista.")
+    print("O número 5 não está presente na lista.")
 
-lista_reversa = lista.sort(reverse=True)
+lista.sort(reverse=True)  # Ordena a lista em ordem decrescente
 
-print(f"A lista de forma descrecente: {lista_reversa}")
+print("A lista em ordem decrescente:", lista)
 
-
-    
