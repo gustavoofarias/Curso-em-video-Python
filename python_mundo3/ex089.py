@@ -6,42 +6,44 @@ No final, mostre um boletim contendo a média de cada um e permita que o usuári
 lista_notas = []
 
 while True:
-
     lista_temp = []
 
-    nome = str(input("Digite seu nome:"))
+    nome = str(input("Digite o nome do aluno: "))
     lista_temp.append(nome)
-    nota1 = float(input("Digite sua nota:"))
+    nota1 = float(input("Digite a primeira nota: "))
     lista_temp.append(nota1)
-    nota2 = float(input("Digite sua nota:"))
-    lista_temp.append(nota2) 
+    nota2 = float(input("Digite a segunda nota: "))
+    lista_temp.append(nota2)
 
     lista_notas.append(lista_temp[:])
-
     lista_temp.clear()
 
+    usuario = input("Deseja continuar cadastrando alunos? (S/N): ").upper()
 
-    usuario = input("Que continuar cadastrando alunos? S/N").upper()
-
-    if usuario == 'S':
-        continue
-
-    else:
+    if usuario != 'S':
         break
-print(lista_notas)
 
-for i in lista_notas:
-    for z in i:
-        nome = i[0]
-        media = (i[1] + i[2]) / 2
-    print(f" Nome: {nome}")
-    print(f"A média do aluno é {media}") 
+print("Boletim:")
 
+for aluno in lista_notas:
+    nome = aluno[0]
+    media = (aluno[1] + aluno[2]) / 2
+    print(f"Nome: {nome}")
+    print(f"Média do aluno: {media:.2f}")
+    print()
 
 while True:
-    usuario2 = input("Que aluno você quer ver as notas?")
-
-    if usuario2 == 999:
+    aluno_desejado = input("Qual aluno você deseja ver as notas? (Digite o nome ou 'sair' para encerrar): ")
+    
+    if aluno_desejado.lower() == 'sair':
         break
-    else:
-        continue
+    
+    encontrado = False
+    for aluno in lista_notas:
+        if aluno_desejado.lower() == aluno[0].lower():
+            print(f"Notas de {aluno[0]}: {aluno[1]}, {aluno[2]}")
+            encontrado = True
+            break
+    
+    if not encontrado:
+        print("Aluno não encontrado.")
